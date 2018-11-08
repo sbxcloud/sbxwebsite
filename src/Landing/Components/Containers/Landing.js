@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import Header from "../Presentational/Header";
 import Presentation from "../Presentational/Presentation";
 import WhatWeDo from "../Presentational/WhatWeDo";
+import Careers from "../Presentational/Careers";
+import ContactUs from "../Presentational/ContactUs";
 
 export default class Landing extends Component {
   componentDidMount() {
@@ -9,11 +11,13 @@ export default class Landing extends Component {
 
   render() {
     return (
-      <div>
-        <Header/>
-        <Presentation/>
-        <WhatWeDo/>
-      </div>
+        <Fragment>
+          <Header/>
+          <Presentation/>
+          <WhatWeDo/>
+          <Careers/>
+          <ContactUs/>
+        </Fragment>
     );
   }
 }

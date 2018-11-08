@@ -9,7 +9,7 @@ export default class WhatWeDo extends Component {
     super(props);
 
     this.state = {
-      whatWeDo: 'We are an IT consulting company with experience in different sectors(Banking/Insurance, Retail-Marketplaces, Oil/Gas) across more than 7 countries where we have been helping companies by build Cloud Native Solutions and Distributed Data Analytics Architectures that allow them adapt to the digital transformation demands that their markets require today.',
+      whatWeDo: 'We focus on an Events-First and Domain-Driven Design, this allows us to know what happens inside your company, knowing the real status and identifying how the data flows inside it triggering different workflows across the value chain.',
       weDo: [
         {
           image: do1,
@@ -40,13 +40,13 @@ export default class WhatWeDo extends Component {
 
   render() {
     return (
-        <div className="container pt-4 pt-md-5">
+        <div id="whatWeDo" className="container pt-4 pt-md-5">
           <div className="row pb-4 pb-md-5 justify-content-center">
             <div className="col-lg-8 col-12 text-center">
               <h3 className="we-do-header">
                 What we Do
               </h3>
-              <p className="we-do-subheader">
+              <p className="subheader">
                 {this.state.whatWeDo}
               </p>
             </div>

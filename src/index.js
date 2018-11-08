@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
+import 'izitoast/dist/css/iziToast.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';

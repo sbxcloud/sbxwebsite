@@ -11,7 +11,6 @@ import {
 } from 'reactstrap';
 import logo from '../../../images/logo.svg';
 
-
 export default class Header extends Component {
 
   constructor(props) {
@@ -21,16 +20,6 @@ export default class Header extends Component {
     this.state = {
       isOpen: false
     };
-
-    $(window).scroll(function (event) {
-      var scroll = $(this).scrollTop();
-      console.log(scroll);
-      if (scroll > 10) {
-        $('.header').addClass('opacityAnimation');
-      } else if (scroll <= 10) {
-        $('.header').removeClass('opacityAnimation');
-      }
-    });
   }
 
   toggle() {
@@ -40,11 +29,32 @@ export default class Header extends Component {
   }
 
   componentDidMount() {
+    $(window).scroll(function (event) {
+      var scroll = $(this).scrollTop();
+      if (scroll > 10) {
+        $('.navbar').addClass('bg-animate');
+      } else if (scroll <= 10) {
+        $('.navbar').removeClass('bg-animate');
+      }
+    });
+
+    $(".navbar .nav-link").click(function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var goto = $(this).data('goto');
+      if (goto && !!$(goto)) {
+        $('html, body').animate({
+          scrollTop: $(goto).offset().top - 30
+        }, {
+          duration: 500
+        });
+      }
+    });
   }
 
   render() {
     return (
-      <Navbar light expand="md" fixed="top" className="mx-lg-5">
+      <Navbar light expand="md" fixed="top" className="px-lg-5">
         <NavbarBrand href="/">
           <img src={logo} className="sbx-logo" alt=""/>
         </NavbarBrand>
@@ -52,13 +62,16 @@ export default class Header extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="">Services</NavLink>
+              <NavLink href="" data-goto="#presentation">Services</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Technologies</NavLink>
+              <NavLink href="" data-goto="#whatWeDo">Technologies</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Contact Us</NavLink>
+              <NavLink href="" data-goto="#careers">Careers</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="" data-goto="#contactUs">Contact Us</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
