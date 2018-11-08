@@ -17,8 +17,7 @@ export default class Presentation extends Component {
           <div className="pl-0 col-12 col-sm-7 col-lg-6">
             <img className="img-fluid" src={figure1} alt=""/>
             <div className="presentation-mobile-business-text">
-              <p>Mobile & Cloud</p>
-              <p>Business Apps</p>
+              <h1>Big Data Engineering & Cloud Native Applications</h1>
             </div>
           </div>
           <div className="pr-0 col-12 col-sm-7 ml-auto col-lg-6">

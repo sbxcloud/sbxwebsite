@@ -48,13 +48,11 @@ textarea {
   top: 40%;
   left: 5%;
   color: white;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.2;
+  width: 510px;
 }
 
-.presentation-mobile-business-text p {
-  margin-bottom: 0;
+.presentation-mobile-business-text h1 {
+  font-weight: 800;
 }
 
 .combined-images-presentation {
@@ -241,6 +239,10 @@ textarea {
 }
 
 @media (max-width: 1024px) {
+  .presentation-mobile-business-text {
+    width: 440px;
+  }
+
   #contactUs {
     padding-top: 180px;
   }
@@ -261,6 +263,11 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  .presentation-mobile-business-text {
+    top: 25%;
+    width: 360px;
+  }
+
   .bg-figure3:before {
     display: none;
   }
